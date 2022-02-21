@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@100&display=swap" rel="stylesheet">
+</head>
+<style>
+body {
+    background-color: #f6f7fc;
+    margin: 0;
+    font-family: 'Bitter', serif;
+}
+.left {
+    float: left;
+    padding-left: 100px;
+}
+.right {
+    padding-left: 900px;
+    padding-top: 30px;
+}
+nav{
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    top: 0;
+    background-color: white;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 75%;
+    float: right;
+    display: flex;
+}
+
+
+
+li a {
+    display: block;
+    color: #9c9c9c;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+    color: white;
+
+}
+.profile {
+    margin-top: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.card-form {
+    
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.card-input {
+    padding: 20px;
+}
+
+input[type=text], input[type=email],input[type=number] {
+    width: 100%;
+    height: 24px;
+    margin-bottom: 12px;
+}
+.submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100.6%;
+    opacity: 0.9;
+    height: 30px;
+    margin-bottom: 12px;
+}
+
+.kontak {
+    background-color: #0000fb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    opacity: 0.9;
+    height: 40px;
+    margin-bottom: 12px;
+}
+.kontak:hover {
+    background-color: white; /* Green */
+    color: #a6c289;
+    border: 2px solid #a6c289;
+
+}
+.resume {
+    background-color: #ffffff;
+    color: #a6c289;
+    border: 2px solid #a6c289;
+    cursor: pointer;
+    width: 40%;
+    opacity: 0.9;
+    height: 40px;
+    margin-bottom: 12px;
+}
+.resume:hover{
+    background-color: #0000fb;
+    color: white;
+    border: 2px solid black;
+}
+.content {
+    margin: 70px;
+    margin-top: 90px;
+}
+
+td {
+    padding-right: 90px;
+    font-size: 20px;
+}
+</style>
+<body>
+    
+<nav>
+    <ul>
+        <li> <a href="/">HOME</a> </li>
+        <li> <a href="/">PRODUCT</a> </li>
+        <li> <a href="/">GALLERY</a> </li>
+        <li> <a href="/">BLOG</a> </li>
+        <li> <a href="/">INVENTORY</a> </li>
+    </ul>
+</nav>
+
+<div class="content">
+    <div class="profile">
+        <input style="float: left;" type="image" src="https://spesialis1.orthopaedi.fk.unair.ac.id/wp-content/uploads/2021/02/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg" alt="Submit" width="200" height="200">
+        <div class="left">
+            <h1>Rizdky Oktaviari Pratama Putra</h1>
+            Backend Developer<p>
+            Edit Resume<p>
+            <input class="kontak" type="submit" value="Kontak">    
+            <input class="resume" type="submit" value="Resume">    
+    
+        </div>
+        <div class="right">
+            <table id="databel">
+                <tr>
+                    <td>Nama</td>
+                    <td id="nama"></td>
+                </tr>
+                <tr>
+                    <td>Role</td>
+                    <td id="role"></td>
+                </tr>
+                <tr>
+                    <td>Availability</td>
+                    <td id="availability"></td>
+                </tr>
+                <tr>
+                    <td>Usia</td>
+                    <td id="usia"></td>
+                </tr>
+                <tr>
+                    <td>Lokasi</td>
+                    <td id="lokasi"></td>
+                </tr>
+                <tr>
+                    <td>Years Experience</td>
+                    <td id="tahun"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td id="email"></td>
+                </tr>
+            </table>            
+        </div>       
+    </div>
+    <form action="" name="data_pribadi">
+        <div class="card-form">
+            <div class="card-input">
+                <label for="">Nama</label><br>
+                <input type="text" name="nama" id="input_nama"><br>
+                <label for="">Role</label><br>
+                <input type="text" name="role" id="input_role"><br>
+                <label for="">Availability</label><br>
+                <input type="text" name="availability" id="input_availability"><br>
+                <label for="">Usia</label><br>
+                <input type="number" min="0" max="100"name="usia" id="input_usia"><br>
+                <label for="">Lokasi</label><br>
+                <input type="text" name="lokasi" id="input_lokasi"><br>
+                <label for="">Years Experience</label><br>
+                <input type="number" min="0" max="100" name="years_experience" id="input_years_experience"><br>
+                <label for="">Email</label><br>
+                <input type="email" name="email" id="input_email"><br>
+                <input class="submit" type="button" value="Submit" onclick='inputdata()'>    
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+<script >
+    function inputdata(){
+var nama=document.forms['data_pribadi']['nama'].value;
+var role=document.forms['data_pribadi']['role'].value;
+var availability=document.forms['data_pribadi']['availability'].value;
+var usia=document.forms['data_pribadi']['usia'].value;        
+var lokasi=document.forms['data_pribadi']['lokasi'].value;        
+var years_experience=document.forms['data_pribadi']['years_experience'].value;        
+var email=document.forms['data_pribadi']['email'].value;        
+
+document.getElementById("nama").innerHTML = nama;
+document.getElementById("role").innerHTML = role;
+document.getElementById("availability").innerHTML = availability;
+document.getElementById("usia").innerHTML = usia;
+document.getElementById("lokasi").innerHTML = lokasi;
+document.getElementById("tahun").innerHTML = years_experience;
+document.getElementById("email").innerHTML = email;
+
+}
+</script>
+</html>
