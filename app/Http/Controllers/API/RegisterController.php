@@ -45,23 +45,23 @@ class RegisterController extends BaseController
      */
     public function login(Request $Request)
     {
-        // $validator = Validator::make($request->all(), [
-        //     'email' => 'required|email',
-        //     'password' => 'required'
-        // ]);
+        $validator = Validator::make($Request->all(), [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
 
-        // if ($validator->fails()) {
-        //     return $this->sendError('Validation Error.', $validator->errors());       
-        // }
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error.', $validator->errors());       
+        }
         
         $user = User::where('email', $Request->email)->first();
 
-        // if (($request->password == $user->password)) {
-        //     return response()->json([
-        //         'success' => false,
-        //         'message' => 'Login Failed!',
-        //     ]);
-        // }
+        if (($Request->password !== $user->password)) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Login Failed!',
+            ]);
+        }
 
         return response()->json([
             'success' => true,
